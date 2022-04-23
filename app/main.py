@@ -169,5 +169,5 @@ def main(path):
 """ 入口函数 """
 if __name__ == "__main__":
 #     main('XYconfig.yaml')
-    main('..app/config.yaml')
+    main('../app/config.yaml')
 #     main('LJconfig.yaml')
