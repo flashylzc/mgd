@@ -17,7 +17,7 @@ jobs:
           python-version: 3.7
       - name: "安装模块" # 步骤二，执行sh命令文件
         run: |
-         pip install -r requirements.txt 
+         pip install -r app/requirements.txt 
       - name: "开始签到"
         run: |
          user='${{secrets.USER}}'
