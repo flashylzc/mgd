@@ -1,12 +1,8 @@
 name: 签到
 
 on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
   schedule:
-    - cron: 0 9 * * *
+    - cron: 0 6 * * *
   watch:
     types: started
 
