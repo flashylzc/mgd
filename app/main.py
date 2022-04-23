@@ -55,11 +55,13 @@ def load(path):
     # 密码
     global password
     # password = data['Login']['password']
-    password = input()
+    password = os.getenv('pwd')
+#     password = input()
     # 账号
     global phone
     # phone = data['Login']['phone']
-    phone = input()
+    phone = os.getenv('user')
+#     phone = input()
     # 健康日报
     global healthyData
     # healthyData = data['healthyData']
