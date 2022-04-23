@@ -1,5 +1,2 @@
-hashlib
-json
 requests
-yaml
-os
+pyyaml
