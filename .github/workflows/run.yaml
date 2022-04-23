@@ -22,7 +22,7 @@ jobs:
         run: |
           echo "开始签到"
 
-          cd mgd
+          cd app
 
           python main.py <<EOF
         env:
