@@ -1,0 +1,48 @@
+# 登录信息
+Login:
+  # 账号
+  phone: 
+  # 密码
+  password: 
+# 签到信息
+Clock:
+  # 签到状态:END 或者START
+  state: START
+  # 国家
+  country: 中国
+  # 详细地址
+  address: 上海博为峰长沙分公司
+  # 省份
+  province: 湖南省
+  # 地区
+  city: 长沙市
+  # 纬度
+  latitude: 28.201277
+  # 经度
+  longitude: 112.988118
+  # 健康日报
+healthyData:
+  province: 湖南省
+  city: 长沙市
+  area: 芙蓉区
+  address:
+  isHighRiskArea: 0
+  state: 1
+  lifeState: 4
+  otherDesc: 今日健康日报
+  isVaccines: 1
+  temperature: 36
+#周报
+WeeklyReport:
+  reportType: week 
+  address: 
+  weeks: 第5周 
+  latitude: 0.0 
+  planId: e2c094a1c0e59c2a46eae939b2530868 
+  startTime: 2022-03-28 00:00:00 
+  yearmonth: 
+  endTime: 2022-03-2 23:59:59 
+  title: 5 
+  content:  
+  longitude: 0.0
+
