@@ -17,19 +17,14 @@ jobs:
           python-version: 3.7
       - name: "安装模块" # 步骤二，执行sh命令文件
         run: |
-         pip install -r app/requirements.txt 
+          pip install -r requirements.txt
       - name: "开始签到"
         run: |
-         user='${{secrets.USER}}'
+          echo "开始签到"
 
-         pwd='${{secrets.PWD}}'
+          cd mgd
 
-         echo "开始签到"
-         
-         cd app
-
-         python main.py <<EOF
-
-         ${user}
-         ${pwd}
-         EOF
+          python main.py <<EOF
+        env:
+          user: "${{secrets.USER}}"
+          pwd: "${{secrets.PWD}}"
