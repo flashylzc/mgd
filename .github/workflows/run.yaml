@@ -1,38 +1,35 @@
-name: 签到
+## run.yml
+name: "run"
 
 on:
+  push:
   schedule:
-    - cron: 0 6 * * *
-  watch:
-    types: started
-
+    - cron: "0 0 * * *"
 jobs:
   build:
-    runs-on: ubuntu-latest
-    if: github.event.repository.owner.id == github.event.sender.id
-
+    runs-on: ubuntu-latest # 运行环境为最新版的Ubuntu
     steps:
-      - uses: actions/checkout@v2
+      - name: "Checkout codes" # 步骤一，获取仓库代码
+        uses: actions/checkout@v2
       - name: 初始化Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.7
-      - name: 签到
+      - name: "安装模块" # 步骤二，执行sh命令文件
         run: |
-          pip install -r requirements.txt
-
+         pip install -r requirements.txt 
       - name: "开始签到"
         run: |
-          user='${{secrets.USER}}'
+         user='${{secrets.USER}}'
 
-          pwd='${{secrets.PWD}}'
+         pwd='${{secrets.PWD}}'
 
-          echo "开始签到"
+         echo "开始签到"
+         
+         cd mgd
 
-          cd mgd
+         python main.py <<EOF
 
-          python main.py <<EOF
-
-          ${user}
-          ${pwd}
-          EOF
+         ${user}
+         ${pwd}
+         EOF
