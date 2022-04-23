@@ -156,7 +156,6 @@ def getPlanId():
 
 
 def main(path):
-    try:
         # 加载数据
         load(path=path)
         # 登录
@@ -166,11 +165,6 @@ def main(path):
         # 上班签到
         Clock(state)
         # 健康日报
-
-    except:
-        os.system('cls')
-        print('签到失败了！')
-
 
 """ 入口函数 """
 if __name__ == "__main__":
