@@ -159,10 +159,16 @@ def getPlanId():
 
 def push():
     """ 推送函数,推动送到微信公众号 """
-    url = "http://wxpusher.zjiecode.com/api/send/message"
-    headers = {'Content-Type': 'application/json'}
     apptoken = os.getenv('APPTOKEN')
     uid = os.getenv('UID')
+    if apptoken == None:
+        print("未配置APPTOKEN,将不会进行微信推送")
+        return
+    if uid == None:
+        print("未配置UID,将不会进行微信推送")
+        return
+    url = "http://wxpusher.zjiecode.com/api/send/message"
+    headers = {'Content-Type': 'application/json'}
     data = {
         "appToken": apptoken,
 
@@ -179,7 +185,6 @@ def push():
     }
     respone = requests.post(url, json=data, headers=headers)
     print(respone.json())
-
 
 def main(path):
     # 加载数据
