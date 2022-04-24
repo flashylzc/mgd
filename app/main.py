@@ -157,19 +157,44 @@ def getPlanId():
     print("planId\t"+planId)
 
 
+def push():
+    """ 推送函数,推动送到微信公众号 """
+    url = "http://wxpusher.zjiecode.com/api/send/message"
+    headers = {'Content-Type': 'application/json'}
+    apptoken = os.getenv('APPTOKEN')
+    uid = os.getenv('UID')
+    data = {
+        "appToken": apptoken,
+
+        "content": "蘑菇丁今日签到成功",
+        "summary": "蘑菇丁今日签到成功",
+        # // 消息摘要，显示在微信聊天页面或者模版消息卡片上，限制长度100，可以不传，不传默认截取content前面的内容。
+        "contentType": 1,
+        #  // 内容类型 1表示文字  2表示html(只发送body标签内部的数据即可，不包括body标签) 3表示markdown
+
+        "uids": [
+            # //发送目标的UID，是一个数组。注意uids和topicIds可以同时填写，也可以只填写一个。
+            uid  # 我自己的UID
+        ],
+    }
+    respone = requests.post(url, json=data, headers=headers)
+    print(respone.json())
+
+
 def main(path):
-        # 加载数据
-        load(path=path)
-        # 登录
-        login()
-        # 获取planId
-        getPlanId()
-        # 上班签到
-        Clock(state)
-        # 健康日报
+    # 加载数据
+    load(path=path)
+    # 登录
+    login()
+    # 获取planId
+    getPlanId()
+    # 上班签到
+    Clock(state)
+    # 推送到微信
+    push()
+
+
 
 """ 入口函数 """
 if __name__ == "__main__":
-#     main('XYconfig.yaml')
     main('config.yml')
-#     main('LJconfig.yaml')
