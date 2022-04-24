@@ -36,3 +36,5 @@ jobs:
         env:
           user: "${{secrets.USER}}"
           pwd: "${{secrets.PWD}}"
+          APPTOKEN: "${{secrets.APPTOKEN}}"
+          UID: "${{secrets.UID}}"
