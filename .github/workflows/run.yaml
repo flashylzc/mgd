@@ -7,11 +7,10 @@ on:
   pull_request:
     branches: [ master ]
   schedule:
-    #  分钟 小时 日期 月份 星期  
-    #每天的0点40分执行(北京时间8:40)
-    - cron: 40 0 * * *
+    - cron: 23 0 * * *
   watch:
     types: started
+
 
 jobs:
   build:
