@@ -3,8 +3,15 @@ name: "run"
 
 on:
   push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
   schedule:
-    - cron: "0 0 * * *"
+    # // 分钟 小时 日期 月份 星期  每个小时的第20分钟执行
+    - cron: 30 0 * * *
+  watch:
+    types: started
+
 jobs:
   build:
     runs-on: ubuntu-latest # 运行环境为最新版的Ubuntu
@@ -24,7 +31,7 @@ jobs:
 
           cd app
 
-          python main.py <<EOF
+          python main.py
         env:
           user: "${{secrets.USER}}"
           pwd: "${{secrets.PWD}}"
