@@ -5,12 +5,12 @@ Clock:
   # 国家
   country: 中国
   # 详细地址
-  address: 上海博为峰长沙分公司
+  address: 内蒙古包头市东河区沙尔沁镇莎木佳村
   # 省份
-  province: 湖南省
+  province: 内蒙古自治区
   # 地区
-  city: 长沙市
+  city: 包头市
   # 纬度
-  latitude: 28.201277
+  latitude: 40.569756
   # 经度
-  longitude: 112.988118
+  longitude: 110.326876
